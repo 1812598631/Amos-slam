@@ -1,0 +1,38 @@
+{  
+     "version": "0.2.0",  
+     "configurations": [
+        {
+            "name": "orb_yolact",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Examples/RGB-D/rgbd_tum",
+            "args": [
+                "${workspaceFolder}/Examples/RGB-D/rgbd_tum Vocabulary/ORBvoc.txt",
+                "${workspaceFolder}/Examples/RGB-D/TUM3.yaml",
+                // TUM数据集
+                "/home/run/slam/data/rgbd_dataset_freiburg3_walking_xyz",
+                "/home/run/slam/data/rgbd_dataset_freiburg3_walking_xyz/association.txt"
+                //Bonn数据集
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/build",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "preLaunchTask": "build",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "将反汇编风格设置为 Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
+
+        }
+    ]
+}  
